@@ -1,0 +1,19 @@
+<h1>New Post</h1>
+
+<%= form_with :model => @post do |form| %>
+  <p>
+    <%= form.label "title" %>
+    <%= form.text_field "title" %>
+    <%= form.label "description" %>
+    <%= form.text_field "description" %>
+  </p>
+  <p>
+    <%= form.label "posted_on" %>
+    <%= form.date "posted_on" %>
+    <%= form.integer "place_id" %>
+    <%= form.integer "place_id" %>
+  </p>
+  <!-- So we can transfer state from the previous action to the next -->
+  <%= form.hidden_field "company_id" %>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,20 @@
+<h1><%= @place["name"] %></h1>
+
+<h2><%= @place["city"] %>, <%= @company["state"] %></h2>
+
+<h3>Posts</h3>
+
+<ul>
+  <% for post in @Posts %>
+    <li><%= post["title"] %>, <%= post["description"] %>, <%= post["posted_on"] %>, <%= post["place_id"] %></li>
+  <% end %>
+</ul>
+
+<p>
+  <a href="/posts/new?place_id=<%= @place["id"] %>">New Place</a>
+</p>
+
+<p><a href="/places">Back to All Places</a></p>
+
+<p><%= button_to "Delete this place", @place, method: :delete %></p>
+  
