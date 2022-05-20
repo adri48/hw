@@ -16,7 +16,7 @@ class PlacesController < ApplicationController
       
         def create
           @place = Place.new
-          @place["name"] = params["company"]["name"]
+          @place["name"] = params["place"]["name"]
           @place.save
           redirect_to "/places"
         end
@@ -27,15 +27,9 @@ class PlacesController < ApplicationController
       
         def update
           @place = Place.find_by({ "id" => params["id"] })
-          @Place["name"] = params["place"]["name"]
+          @place["name"] = params["place"]["name"]
           @place.save
           redirect_to "/places"
         end
       
-        def destroy
-          @place = place.find_by({ "id" => params["id"] })
-          @place.destroy
-          redirect_to "/places"
-        end
-            
 end
